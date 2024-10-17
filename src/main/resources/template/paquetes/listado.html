@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: titulo"></head>
+<body>
+    <header th:replace="fragments :: header"></header>
+
+    <div class="container">
+        <h1>Listado de Paquetes</h1>
+
+        <!-- Formulario de búsqueda -->
+        <form th:action="@{/paquetes/listado}" method="get">
+            <input type="text" name="destinatario" placeholder="Buscar por destinatario" />
+            <button type="submit">Buscar</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Destinatario</th>
+                    <th>Estado</th>
+                    <th>Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="paquete : ${paquetes}">
+                    <td th:text="${paquete.id}"></td>
+                    <td th:text="${paquete.destinatario}"></td>
+                    <td th:text="${paquete.estado}"></td>
+                    <td>
+                        <a th:href="@{/paquetes/detalles(id=${paquete.id})}">Ver Detalles</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

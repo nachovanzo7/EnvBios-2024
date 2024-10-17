@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragmentos/layout :: titulo">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Clientes</title>
+</head>
+<body>
+    
+    <div th:replace="fragmentos/header :: header"></div>
+
+    <h1>Eliminar Cliente</h1>
+    
+    <p>Estás seguro que deseas eliminar la cuenta <strong th:text="${cliente.nombreUsuario}"></strong>?</p>
+
+    <form th:action="@{/clientes/eliminar}" method="post">
+        <button type="submit">Confirmar</button>
+    </form>
+
+    <a th:href="@{/clientes/perfil}">Cancelar</a>
+
+    <div th:replace="fragmentos/footer :: footer"></div>
+
+</body>
+</html>

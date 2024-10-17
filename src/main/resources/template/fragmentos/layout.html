@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:fragment="titulo">Sistema de Envios</title>
+    <link rel="stylesheet" th:href="@{/estilos/estilo.css}">
+</head>
+<body>
+    <header th:fragment="header">
+        <nav>
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/login}">Ingresar</a>
+            <a th:href="@{/registro}">Registrar</a>
+            <a th:href="@{/editar}">Editar</a>
+        </nav>
+    </header>
+
+    <footer th:fragment="footer">
+        <p>&copy; 2024 EnvBIOS. Todos los derechos Reservados.</p>
+    </footer>
+
+    <section th:fragment="content">
+
+    </section>
+</body>
+</html>
